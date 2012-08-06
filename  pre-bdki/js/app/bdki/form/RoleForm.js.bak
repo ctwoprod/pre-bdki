@@ -1,0 +1,36 @@
+Ext.define('js_bdki.form.RoleForm', {
+	extend : 'Ext.form.FormPanel', 
+	alias : 'widget.js_bdki.form.RoleForm',
+	id: 'js_bdki.form.RoleForm',
+	title: 'Role Form',
+    width: 600,
+    height: 250,
+    padding: 10,
+    labelWidth: 200,
+    initComponent: function() {
+        this.items = [
+            {
+                xtype: 'textfield',
+                fieldLabel: 'Name'
+            },
+            {
+                xtype: 'textfield',
+                fieldLabel: 'Description'
+            }
+        ];
+        this.hbar = {
+            xtype: 'toolbar',
+            items: [
+                {
+                    xtype: 'button',
+                    text: 'Save'
+                },
+                {
+                    xtype: 'button',
+                    text: 'Cancel'
+                }
+            ]
+        };
+        js_bdki.form.UserForm.superclass.initComponent.call(this);
+    }
+});

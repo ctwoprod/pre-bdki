@@ -1,0 +1,4 @@
+Ext.define('js_bdki.model.VendorModel', {
+    extend: 'Ext.data.Model',
+    fields: ['name', 'alamat','no_telp']
+});

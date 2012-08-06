@@ -1,0 +1,49 @@
+Ext.define('js_bdki.panel.LoginPanel', {
+    extend : 'Ext.form.Panel',
+    alias : 'widget.js_bdki.panel.LoginPanel',
+    id: 'loginForm',
+    
+    frame: true, 
+    title: 'Login',
+    height: 200,
+    width: 400,
+    
+    fieldDefaults: {
+        labelAlign: 'left',
+        labelWidth: 90,
+        anchor: '100%'
+    },
+    
+    items: [{
+        xtype:'box'
+        ,anchor:''
+        ,fieldLabel:'Image'
+		,padding: '5,5,5,5'
+        ,autoEl:{
+            tag:'div', 
+            children:[{
+                tag:'img',
+                qtip:'Bank DKI',
+                src:'/BDKI/images/icon.jpg'
+            }]
+        }
+    },{
+        xtype: 'textfield',
+        name: 'j_username',
+        fieldLabel: 'Username',
+        value: ''
+    }, {
+        xtype: 'textfield',
+        name: 'j_password',
+        inputType: 'password',
+        fieldLabel: 'Password'
+    }],
+    
+    buttons: [{
+        text: 'Login', 
+        handler: function(){
+
+            window.location.href = 'main.html';
+        }
+    }]
+});
