@@ -1,0 +1,55 @@
+Ext.define('js_bdki.form.VendorForm', {
+	extend : 'Ext.form.FormPanel', 
+	alias : 'widget.js_bdki.form.VendorForm',
+	id: 'js_bdki.form.VendorForm',
+	title: 'Form Vendor',
+    labelWidth: 200,
+    bodyStyle:'padding:10px 10px 0',
+    initComponent: function() {
+        this.items = [           
+            {
+                xtype: 'textfield',
+                name: 'name',
+                fieldLabel: 'Nama'
+            },
+            {
+                xtype: 'textfield',
+                name: 'alamat',
+                fieldLabel: 'Alamat'
+            },
+            {
+				xtype: 'textfield',
+                name: 'no_telp',
+                fieldLabel: 'No Telp'
+            }
+        ];
+        js_bdki.form.VendorForm.superclass.initComponent.call(this);
+        this.disableVendorForm();
+    },
+    
+    enableVendorForm: function(){
+    	this.getForm().getFields().each(function(f){
+    		f.setReadOnly(false);
+    	});
+    }, 
+    
+    disableVendorForm: function(){
+    	this.getForm().getFields().each(function(f){
+    		f.setReadOnly(true);
+    	});
+    }, 
+    
+    simpanVendor: function(){
+    	var form = Ext.getCmp('js_bdki.form.VendorForm');
+    	if(form.getForm().isValid()){
+    		Ext.MessageBox.alert(
+                'TODO','implement form save'
+            );
+    	} else {
+    		Ext.MessageBox.alert(
+                'Error!',
+                'Please check again'
+            );	
+    	}
+    }
+});
